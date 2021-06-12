@@ -1,0 +1,107 @@
+<mvc:View xmlns:smartform="sap.ui.comp.smartform" 
+	controllerName="gruppo1.gruppo1.controller.CustomersVerify"
+	xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:semantic="sap.f.semantic"
+  >
+  
+
+  <semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		busy="{objectView>/busy}"
+    busyIndicatorDelay="{objectView>/delay}"
+    
+    >
+
+		<semantic:titleHeading>
+			<Title
+				text="Verifica Cliente"
+				level="H2"/>
+    </semantic:titleHeading>
+    
+    <semantic:headerContent>
+      <HBox class="breadCrumbs" width="100%" alignItems="Center">
+        <SegmentedButton class="sapUiSmallMarginBottom" width="100%">
+          <items>
+            <SegmentedButtonItem icon="sap-icon://nav-back" press="navBack"/>
+          </items>
+        </SegmentedButton>
+      </HBox>
+    </semantic:headerContent>
+
+		<semantic:content>
+      <FlexBox direction="Column">
+        <items>
+          <form:Form id="userData">
+            <form:layout>
+              <form:ColumnLayout 
+                columnsM="2"
+                columnsL="3"
+                columnsXL="4"
+              />
+            </form:layout>
+            <form:FormContainer>
+              <form:formElements>
+                <form:FormElement label="CustomerID">
+                  <form:fields>
+                    <Input id="customerIDInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Company Name">
+                  <form:fields>
+                    <Input id="companyNameInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Contact Name">
+                  <form:fields>
+                    <Input id="contactNameInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Contact Title">
+                  <form:fields>
+                    <Input id="contactTitleInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Address">
+                  <form:fields>
+                    <Input id="addressInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="City">
+                  <form:fields>
+                    <Input id="cityInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Region">
+                  <form:fields>
+                    <Input id="regionInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Postal Code">
+                  <form:fields>
+                    <Input id="postalCodeInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Country">
+                  <form:fields>
+                    <Input id="countryInput" required="true" />
+                  </form:fields>
+                </form:FormElement>
+              </form:formElements>
+            </form:FormContainer>
+          </form:Form>
+          <HBox class="sapUiSmallMarginBeginEnd" justifyContent="End">
+            <Button class="sapUiSmallMarginBegin" text="Invia"/>
+            <Button class="sapUiSmallMarginBegin" text="Pulisci" press="clearForm"/>
+          </HBox>
+        </items>
+      </FlexBox>
+		</semantic:content>
+
+	</semantic:SemanticPage>
+
+</mvc:View>

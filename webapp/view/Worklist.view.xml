@@ -1,0 +1,94 @@
+<mvc:View
+	controllerName="gruppo1.gruppo1.controller.Worklist"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+
+	<semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false">
+    
+    <semantic:titleHeading>
+			<Title
+				text="{i18n>worklistTitle}"
+        level="H2"/>
+    </semantic:titleHeading>
+
+    <semantic:headerContent>
+      <HBox class="breadCrumbs" width="100%" alignItems="Center">
+        <SegmentedButton class="sapUiSmallMarginBottom" width="100%">
+          <items>
+            <SegmentedButtonItem icon="sap-icon://nav-back" press="navBack"/>
+          </items>
+        </SegmentedButton>
+      </HBox>
+    </semantic:headerContent>
+      
+		<semantic:content>
+      
+			<Table
+				id="table"
+				width="auto"
+				items="{
+					path: '/Customers',
+					sorter: {
+						path: 'CustomerID',
+						descending: false
+					}
+				}"
+				noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished=".onUpdateFinished">
+
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title
+							id="tableHeader"
+							text="{worklistView>/worklistTableTitle}"
+							level="H3"/>
+            <ToolbarSpacer />
+            <Button icon="sap-icon://action" text="Export as Excel" press=".exportAsExcel"/>
+            <Button icon="sap-icon://sort" press="onSorter"/>
+						<SearchField
+							id="searchField"
+							tooltip="{i18n>worklistSearchTooltip}"
+							search=".onSearch">
+							<layoutData>
+								<OverflowToolbarLayoutData
+									maxWidth="200px"
+									priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</headerToolbar>
+
+				<columns>
+					<Column id="nameColumn">
+						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+					</Column>
+					<Column id="unitNumberColumn" hAlign="End">
+						<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem
+						type="Navigation"
+						press=".onPress">
+						<cells>
+							<ObjectIdentifier
+								title="{CompanyName}"/>
+							<ObjectNumber
+								unit="{CustomerID}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+	</semantic:SemanticPage>
+
+</mvc:View>

@@ -48,54 +48,65 @@
               <form:formElements>
                 <form:FormElement label="CustomerID">
                   <form:fields>
-                    <Input id="customerIDInput" required="true" />
+                    <Input id="customerID" required="true" value="{formData>/CustomerID}" liveChange="formatCustomerID"/>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="Company Name">
                   <form:fields>
-                    <Input id="companyNameInput" required="true" />
+                    <Input id="companyName" required="true" value="{formData>/CompanyName}" liveChange="formatName"/>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="Contact Name">
                   <form:fields>
-                    <Input id="contactNameInput" required="true" />
+                    <Input id="contactName" required="true" value="{formData>/ContactName}" liveChange="formatName"/>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="Contact Title">
                   <form:fields>
-                    <Input id="contactTitleInput" required="true" />
+                    <Select forceSelection="false" selectedKey="{formData>/ContactTitle}" >
+                      <items>
+                        <core:Item key="Addetto/a Vendite" text="Addetto/a Vendite" />
+                        <core:Item key="Rappresentante" text="Rappresentante" />
+                        <core:Item key="Manager" text="Manager" />
+                      </items>
+                    </Select>
                   </form:fields>
                 </form:FormElement>
-                <form:FormElement label="Address">
+                <form:FormElement label="Address" >
                   <form:fields>
-                    <Input id="addressInput" required="true" />
+                    <Input id="address" required="true" value="{formData>/Address}"/>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="City">
                   <form:fields>
-                    <Input id="cityInput" required="true" />
+                    <ComboBox selectionChange="cityCompiler" selectedKey="{formData>/City}">
+                      <core:Item key="Roma" text="Roma" />
+                      <core:Item key="Milano" text="Milano"/>
+                      <core:Item key="Bologna" text="Bologna"/>
+                    </ComboBox>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="Region">
                   <form:fields>
-                    <Input id="regionInput" required="true" />
+                    <Input id="region" required="true" value="{formData>/Region}"/>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="Postal Code">
                   <form:fields>
-                    <Input id="postalCodeInput" required="true" />
+                    <Input id="postalCode" required="true" value="{formData>/PostalCode}"/>
                   </form:fields>
                 </form:FormElement>
                 <form:FormElement label="Country">
                   <form:fields>
-                    <Input id="countryInput" required="true" />
+                    <Input id="country" required="true" value="{formData>/Country}"/>
                   </form:fields>
                 </form:FormElement>
               </form:formElements>
             </form:FormContainer>
           </form:Form>
           <HBox class="sapUiSmallMarginBeginEnd" justifyContent="End">
-            <Button class="sapUiSmallMarginBegin" text="Invia"/>
+            <Button class="sapUiSmallMarginBegin" text="Check" press="checkForm"/>
+            <Button class="sapUiSmallMarginBegin" text="Invia" press="submitForm"/>
             <Button class="sapUiSmallMarginBegin" text="Pulisci" press="clearForm"/>
           </HBox>
         </items>

@@ -17,6 +17,11 @@
             <core:Icon src="sap-icon://customer-and-contacts" height="100%" width="100%" size="75px"/>
           </TileContent>
         </GenericTile>
+        <GenericTile class="sapUiSmallMargin" imageDescription="sap-icon://offsite-work" header="{i18n>clientiEsterniGenericTile.header}" press="navTo('clientiEsterni')">
+          <TileContent >
+            <core:Icon src="sap-icon://offsite-work" height="100%" width="100%" size="75px"/>
+          </TileContent>
+        </GenericTile>
       </FlexBox>
     </content>
   </Page>

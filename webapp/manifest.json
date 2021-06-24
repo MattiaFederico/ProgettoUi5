@@ -18,6 +18,13 @@
                     "odataVersion": "2.0",
                     "localUri": "localService/metadata.xml"
                 }
+            },
+            "es5": {
+              "uri": "/sap/opu/odata/iwbep/GWSAMPLE_BASIC/",
+              "type": "OData",
+              "settings": {
+                  "odataVersion": "2.0"
+              }
             }
         }
     },
@@ -69,6 +76,10 @@
                 "settings": {
                   "useBatch": false
                 }
+            },
+            "es5": {
+              "dataSource": "es5",
+              "preload": true
             }
         },
         "routing": {
@@ -114,6 +125,11 @@
                   "pattern": "avvertiCliente",
                   "name": "avvertiCliente",
                   "target": "avvertiCliente"
+                },
+                {
+                  "pattern": "clientiEsterni",
+                  "name": "clientiEsterni",
+                  "target": "clientiEsterni"
                 }
             ],
             "targets": {
@@ -136,6 +152,11 @@
                 "avvertiCliente": {
                   "viewName": "AlertCustomers",
                   "viewId": "alertCustomers",
+                  "viewLevel": 2
+                },
+                "clientiEsterni": {
+                  "viewName": "ClientiEsterni",
+                  "viewId": "clientiEsterni",
                   "viewLevel": 2
                 },
                 "object": {

@@ -1,0 +1,118 @@
+<mvc:View
+	controllerName="gruppo1.gruppo1.controller.ClientiEsterni"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+
+	<semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false">
+    
+    <semantic:titleHeading>
+			<Title
+				text="{i18n>worklistTitle}"
+        level="H2"/>
+    </semantic:titleHeading>
+
+    <semantic:headerContent>
+      <HBox class="breadCrumbs" width="100%" alignItems="Center">
+        <SegmentedButton class="sapUiSmallMarginBottom" width="100%">
+          <items>
+            <SegmentedButtonItem icon="sap-icon://nav-back" press="navBack"/>
+          </items>
+        </SegmentedButton>
+      </HBox>
+    </semantic:headerContent>
+      
+		<semantic:content>
+      
+			<Table
+				id="table"
+				width="auto"
+				items="{
+					path: 'es5>/BusinessPartnerSet',
+					sorter: {
+						path: 'BusinessPartnerID',
+						descending: false
+					}
+				}"
+				noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished=".onUpdateFinished">
+
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title
+							id="tableHeader"
+							text="Clienti Esterni"
+							level="H3"/>
+            <ToolbarSpacer />
+						<SearchField
+							id="searchField"
+							tooltip="{i18n>worklistSearchTooltip}"
+							search=".onSearch">
+							<layoutData>
+								<OverflowToolbarLayoutData
+									maxWidth="200px"
+									priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</headerToolbar>
+
+				<columns>
+					<Column id="nameColumn">
+						<Text text="City" id="nameColumnTitle"/>
+					</Column>
+					<Column >
+						<Text text="PostalCode"/>
+          </Column>
+          <Column >
+						<Text text="Street" />
+          </Column>
+          <Column >
+						<Text text="Business Partner ID" />
+          </Column>
+          <Column >
+						<Text text="Company Name" />
+          </Column>
+          <Column >
+						<Text text="WebAddress" />
+          </Column>
+          <Column >
+						<Text text="EmailAddress" />
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem
+						press=".onPress">
+						<cells>
+							<ObjectListItem
+								title="{es5>Address/City}"/>
+							<ObjectListItem
+                title="{es5>Address/PostalCode}"/>
+              <ObjectListItem
+                title="{es5>Address/Street}"/>
+              <ObjectListItem
+                title="{es5>BusinessPartnerID}"/>
+              <ObjectListItem
+                title="{es5>CompanyName}"/>
+              <Link text="{es5>WebAddress}" href="{es5>WebAddress}"/>            
+              <ObjectListItem 
+                title="{es5>EmailAddress}"
+                press="handleEmailPress"
+                type="Active"
+              />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+	</semantic:SemanticPage>
+
+</mvc:View>

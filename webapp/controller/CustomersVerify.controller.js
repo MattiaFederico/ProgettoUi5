@@ -42,6 +42,7 @@ sap.ui.define([
       }
     },
     formatName: function( oControlEvent ) {
+      debugger;
       let string = oControlEvent.getParameter("value");
       let sourceName = oControlEvent.getSource().getParent().getAggregation("label").replace(/\s/g, "");
       let inputID = sourceName.charAt(0).toLowerCase()+ sourceName.slice(1);

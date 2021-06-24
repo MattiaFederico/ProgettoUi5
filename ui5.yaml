@@ -12,6 +12,8 @@ server:
       backend:
       - path: /V2
         url: https://services.odata.org
+      - path: /sap/opu/odata/iwbep
+        url: https://sapes5.sapdevcenter.com
       ui5:
         path: 
         - /resources

@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <SelectDialog 
+    title="{i18n>customersDialog.title}" 
+    id="customersDialog"
+    items="{/Customers}"
+    confirm="getCustomerID"
+    cancel="onDialogClose">
+      <items>
+        <StandardListItem type="Active" 
+          press="onSupplierSelect" 
+          title="{CustomerID}" 
+          description="{CompanyName}"
+        />
+      </items>
+  </SelectDialog>
+</core:FragmentDefinition>

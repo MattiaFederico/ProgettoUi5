@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<QuickView
+    id="quickView"
+  >
+    <QuickViewPage 
+      header="Città: {weather>/city}"
+      title="Descrizione: {weather>/description}"
+      description="Temperatura minima: {weather>/temp_min} °C"      
+    >
+    <QuickViewGroup>
+      <QuickViewGroupElement
+        label="email"
+        value="Send email to Customer"
+        type="email"
+        visible="{weather>/temp_minState}"
+      />
+      </QuickViewGroup>
+    </QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

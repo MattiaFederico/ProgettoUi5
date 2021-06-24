@@ -12,6 +12,11 @@
             <core:Icon src="sap-icon://bar-code" height="100%" width="100%" size="75px"/>
           </TileContent>
         </GenericTile>
+        <GenericTile class="sapUiSmallMargin" imageDescription="sap-icon://customer-and-contacts" header="{i18n>customerAlertGenericTile.header}" press="navTo('avvertiCliente')">
+          <TileContent >
+            <core:Icon src="sap-icon://customer-and-contacts" height="100%" width="100%" size="75px"/>
+          </TileContent>
+        </GenericTile>
       </FlexBox>
     </content>
   </Page>

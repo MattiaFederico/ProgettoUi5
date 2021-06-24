@@ -109,6 +109,11 @@
                   "pattern": "verificaCliente",
                   "name": "verificaCliente",
                   "target": "verificaCliente"
+                },
+                {
+                  "pattern": "avvertiCliente",
+                  "name": "avvertiCliente",
+                  "target": "avvertiCliente"
                 }
             ],
             "targets": {
@@ -126,6 +131,11 @@
                 "verificaCliente": {
                   "viewName": "CustomersVerify",
                   "viewId": "CustomersVerify",
+                  "viewLevel": 2
+                },
+                "avvertiCliente": {
+                  "viewName": "AlertCustomers",
+                  "viewId": "alertCustomers",
                   "viewLevel": 2
                 },
                 "object": {

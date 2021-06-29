@@ -75,7 +75,7 @@ sap.ui.define([
       let oData = oModel.oData;
       let customerID = this.byId("customerInput").getValue();
       let city = oData[`Customers('${customerID}')`].City;
-      let token = "5ce55d720929c2c516045ce60b27de43";
+      let token = config.API_TOKEN;
 
       $.ajax({
         url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${token}`, 

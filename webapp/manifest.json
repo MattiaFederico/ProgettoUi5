@@ -175,9 +175,5 @@
                 }
             }
         }
-    },
-    "sap.cloud": {
-        "public": true,
-        "service": "gruppo1-gruppo1"
     }
 }
